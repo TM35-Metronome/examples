@@ -5,3 +5,5 @@ by writing commands for it in any programming language. Wanna learn any of these
 
 ## Languages:
 * [`x86_64 assembly (linux)`](x86_64/rand_starters.asm)
+* [`haskell`](haskell/Main.hs)
+
