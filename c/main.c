@@ -48,18 +48,15 @@ int main() {
 
     while ((line = get_line(buf, BUFSIZE, &start, &end, &len))) {
         unsigned int index, value;
-        size_t result;
 
         line[len] = '\0';
-        result = sscanf(line, ".starters[%u]=%u", &index, &value);
-        if (result == 2 && index < array_size(starters)) {
+        if (sscanf(line, ".starters[%u]=%u", &index, &value) == 2
+            && index < array_size(starters)) {
             starters[index] = true;
         } else {
-            result = sscanf(line, ".pokemons[%u]", &index);
-            if (result == 1 && pokemons < index)
-                pokemons = index;
+            if (sscanf(line, ".pokemons[%u]", &index) == 1)
+                pokemons = pokemons < index ? index : pokemons;
 
-            /* TODO: Check for write error */
             line[len] = '\n';
             if (fwrite(line, 1, len+1, stdout) != len+1)
                 goto error_path;
