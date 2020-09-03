@@ -9,13 +9,13 @@ int main() {
     std::array<bool, 3> starters;
 
     for (std::string line; std::getline(std::cin, line);) {
-        unsigned int index, value;
-        if (sscanf(line.c_str(), ".starters[%u]=%u", &index, &value) == 2
+        unsigned int index;
+        if (sscanf(line.c_str(), ".starters[%u]=", &index) == 2
             && index < starters.size()) {
             starters[index] = true;
         } else {
             if (sscanf(line.c_str(), ".pokemons[%u]", &index) == 1)
-                pokemons = pokemons < index ? index : pokemons;
+                pokemons = pokemons < index+1 ? index+1 : pokemons;
 
             std::cout << line << "\n";
         }

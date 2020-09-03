@@ -35,11 +35,11 @@ countPokemons :: [String] -> Int
 countPokemons l =
     foldr (\line count -> max count (pokemonCount line)) 0 l
 
--- Parses ".pokemons[<N>]" and returns `N`
+-- Parses ".pokemons[<N>]" and returns `N+1`
 pokemonCount :: String -> Int
 pokemonCount (stripPrefix ".pokemons[" -> Just suf) =
     let match = break (== ']') suf
-    in maybe 0 (* 1) (readMaybe (fst match) :: Maybe Int)
+    in maybe 0 (* 1) (+ 1 (readMaybe (fst match) :: Maybe Int))
 pokemonCount _ = 0
 
 -- Parses ".starters[<N>]=<N2>" and returns ".starters[<N>]=<rand>"

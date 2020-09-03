@@ -258,6 +258,7 @@ store_parsed_data_to_global_tables:
     jl store_parsed_data_to_global_tables_exit
     je store_starter_to_global_table
 
+    inc rbx
     cmp rbx,[number_of_pokemons]
     jle store_parsed_data_to_global_tables_exit
     mov [number_of_pokemons],rbx

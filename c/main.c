@@ -47,15 +47,15 @@ int main() {
     char *line;
 
     while ((line = get_line(buf, BUFSIZE, &start, &end, &len))) {
-        unsigned int index, value;
+        unsigned int index;
 
         line[len] = '\0';
-        if (sscanf(line, ".starters[%u]=%u", &index, &value) == 2
+        if (sscanf(line, ".starters[%u]=", &index) == 2
             && index < array_size(starters)) {
             starters[index] = true;
         } else {
             if (sscanf(line, ".pokemons[%u]", &index) == 1)
-                pokemons = pokemons < index ? index : pokemons;
+                pokemons = pokemons < index+1 ? index+1 : pokemons;
 
             line[len] = '\n';
             if (fwrite(line, 1, len+1, stdout) != len+1)
