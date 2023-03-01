@@ -12,6 +12,8 @@ things about the data they get passes in:
 * That there are at most 3 starters.
 * That you can simply look at the biggest `pokemons` index to figure out the range of
   `0..N` to pick from.
+* That all pokemons are valid options to pick. In some games, you are only allow to have
+  pokemons that the pokedex contains.
 
 In a real command, one should not assume these to be true:
 * A game can have any number of starters
