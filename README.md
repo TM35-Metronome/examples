@@ -7,8 +7,8 @@ programming language.
 ## Example
 
 The examples implement a super a simple command that randomizes starter Pokémons.
-These examples are written to be simple first a formost, so they assume certain things
-about the data they get passes in:
+These examples are written to be simple first a formost, so some of them might assume certain
+things about the data they get passes in:
 * That there are at most 3 starters.
 * That you can simply look at the biggest `pokemons` index to figure out the range of
   `0..N` to pick from.
