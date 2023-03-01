@@ -26,8 +26,8 @@ See [`tm35-rand-starters`](https://github.com/TM35-Metronome/metronome/blob/mast
 for how this command would actually be written to handle everything correctly.
 
 ## Languages:
-* [`c`](c/main.c)
-* [`c++`](cpp/main.cpp)
-* [`haskell`](haskell/Main.hs)
+* [`C`](c/main.c)
+* [`C++`](cpp/main.cpp)
+* [`Haskell`](haskell/Main.hs)
 * [`Lua`](lua/main.lua)
 * [`x86_64 assembly (linux)`](x86_64/rand_starters.asm)
